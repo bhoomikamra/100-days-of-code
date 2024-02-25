@@ -1,5 +1,5 @@
-# 100DaysOfCode Challenge
-Welcome to my 100DaysOfCode challenge!💻🎉 <br>
+# Welcome to my 100DaysOfCode challenge💻🎉
+
 ## What is the 100DaysOfCode Challenge?
 The #100DaysOfCode challenge is a commitment to code for at least one hour every day for the next 100 days. Whether you're a beginner or a seasoned developer, this challenge is a fantastic way to enhance your coding skills, build a coding habit, and connect with a community of like-minded individuals.
 ## 💡 Why am I doing this?

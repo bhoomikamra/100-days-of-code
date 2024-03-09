@@ -2,7 +2,15 @@
 using namespace std;
 
 int maxSubArraySum(int arr[], int n) {
-    // Your code here
+    int maxEndingHere = arr[0];
+    int maxSoFar = arr[0];
+
+    for (int i = 1; i < n; ++i) {
+        maxEndingHere = max(arr[i], maxEndingHere + arr[i]);
+        maxSoFar = max(maxSoFar, maxEndingHere);
+    }
+
+    return maxSoFar;
 }
 
 int main() {

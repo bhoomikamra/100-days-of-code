@@ -2,7 +2,16 @@
 using namespace std;
 
 void rotateArray(int arr[], int n, int k) {
-    // Your code here
+    k = k % n;
+    reverse(arr, arr + n);
+    reverse(arr, arr + k);
+    reverse(arr + k, arr + n);
+
+    // Display the rotated array
+    for (int i = 0; i < n; ++i) {
+        cout << arr[i] << " ";
+    }
+    cout << endl;
 }
 
 int main() {
@@ -10,6 +19,5 @@ int main() {
     int n = sizeof(arr) / sizeof(arr[0]);
     int k = 2;
     rotateArray(arr, n, k);
-    // Display the rotated array
     return 0;
 }

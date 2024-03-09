@@ -1,7 +1,3 @@
-#day1
-
-// C++ program for divided a number by 3 without using operator
-
 #include <bits/stdc++.h>
 using namespace std;
 int add(int x, int y)

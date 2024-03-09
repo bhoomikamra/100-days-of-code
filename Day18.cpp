@@ -2,24 +2,40 @@
 #include <vector>
 using namespace std;
 
-void countingSort(vector<int>& arr) {
-    int maxVal = *max_element(arr.begin(), arr.end());
-    vector<int> count(maxVal + 1, 0);
+struct TreeNode {
+    int val;
+    TreeNode* left;
+    TreeNode* right;
+    TreeNode(int x) : val(x), left(nullptr), right(nullptr) {}
+};
 
-    for (int num : arr) {
-        count[num]++;
-    }
-
-    int index = 0;
-    for (int i = 0; i <= maxVal; ++i) {
-        while (count[i] > 0) {
-            arr[index++] = i;
-            count[i]--;
-        }
+void inorderTraversalHelper(TreeNode* root, vector<int>& result) {
+    if (root != nullptr) {
+        inorderTraversalHelper(root->left, result);
+        result.push_back(root->val);
+        inorderTraversalHelper(root->right, result);
     }
 }
 
+vector<int> inorderTraversal(TreeNode* root) {
+    vector<int> result;
+    inorderTraversalHelper(root, result);
+    return result;
+}
+
 int main() {
-    // Test your counting sort implementation
+    // Example usage:
+    TreeNode* root = new TreeNode(1);
+    root->right = new TreeNode(2);
+    root->right->left = new TreeNode(3);
+
+    vector<int> result = inorderTraversal(root);
+
+    cout << "Inorder Traversal: ";
+    for (int num : result) {
+        cout << num << " ";
+    }
+    cout << endl;
+
     return 0;
 }

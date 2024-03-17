@@ -25,5 +25,21 @@ vector<int> inorderTraversal(TreeNode* root) {
 
 int main() {
     // Test your binary tree traversal function
+    TreeNode* root = new TreeNode(1);
+    root->right = new TreeNode(2);
+    root->right->left = new TreeNode(3);
+
+    vector<int> result = inorderTraversal(root);
+
+    cout << "Inorder traversal result: ";
+    for (int num : result) {
+        cout << num << " ";
+    }
+    cout << endl;
+
+    delete root->right->left;
+    delete root->right;
+    delete root;
+
     return 0;
 }

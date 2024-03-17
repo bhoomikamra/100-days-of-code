@@ -29,9 +29,27 @@ public:
         outStack.pop();
         return front;
     }
+
+    bool isEmpty() const {
+        return inStack.empty() && outStack.empty();
+    }
 };
 
 int main() {
-    // Test your queue implementation
+    QueueUsingStacks queue;
+    queue.enqueue(1);
+    queue.enqueue(2);
+    queue.enqueue(3);
+
+    cout << "Dequeued element: " << queue.dequeue() << endl;
+    cout << "Dequeued element: " << queue.dequeue() << endl;
+
+    queue.enqueue(4);
+    queue.enqueue(5);
+
+    while (!queue.isEmpty()) {
+        cout << "Dequeued element: " << queue.dequeue() << endl;
+    }
+
     return 0;
 }

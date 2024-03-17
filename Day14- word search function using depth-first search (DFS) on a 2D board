@@ -22,21 +22,5 @@ bool dfs(vector<vector<char>>& board, string word, int i, int j, int k) {
 
     board[i][j] = tmp; // Backtrack
 
-    return found;
-}
+    return f
 
-bool exist(vector<vector<char>>& board, string word) {
-    for (int i = 0; i < board.size(); ++i) {
-        for (int j = 0; j < board[0].size(); ++j) {
-            if (dfs(board, word, i, j, 0)) {
-                return true;
-            }
-        }
-    }
-    return false;
-}
-
-int main() {
-    // Test your word search function
-    return 0;
-}
